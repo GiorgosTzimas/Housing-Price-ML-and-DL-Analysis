@@ -1,5 +1,7 @@
 # Housing-Price-ML-and-DL-Analysis
 
+The project was developed as part of academic coursework for the course Machine And Deel Learning (MSc. in Business Administration and Data Science).
+
 # **Project Background**
 
 Due to rapid urbanization and rising demant in U.S., has led to housing price fluctuations. This highlights the need for accurate data-driven pricing and classification tools. Traditional valuation methods often fail to capture complex, non-linear relationships among property features, motivating the use of Machine Learning (ML) and Deep Learning (DL) techniques. This project leverages a large-scale rental dataset to develop and evaluate ML/DL models, providing actionable insights for real estate stakeholders.
