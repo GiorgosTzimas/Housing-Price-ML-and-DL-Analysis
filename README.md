@@ -1,6 +1,6 @@
 # Housing-Price-ML-and-DL-Analysis
 
-The project was developed as part of academic coursework for the course Machine And Deel Learning (MSc. in Business Administration and Data Science).
+The project was developed as part of academic coursework for the course Machine And Deep Learning (MSc. in Business Administration and Data Science).
 
 # **Project Background**
 
