@@ -106,7 +106,7 @@ Overall, this project demonstrates how machine learning can support structured d
 ## Project structure
 
 ```
-nlp-mental-health-classification/
+US-Housing-Price-ML-and-DL-Analysis/
 │
 ├── images
   └── Classification_Results.png
