@@ -52,15 +52,16 @@ Model selection and optimization were based on cross-validation and performance 
 # Key Results
 
 - Ensemble models like Random Forest and XGBoost achieved the strongest performance
-- XGBoost achieved **~76.5% classification accuracy** for price categories
-
-**Classification Results**
-![Classification Results](images/Classification_Results.png)
 
 - Random Forest explained **~80% of variance (R² ≈ 0.80)** in price prediction
   
 **Regression Results**
 ![Regression Results](images/Reression_Results.png)
+
+- XGBoost achieved **~76.5% classification accuracy** for price categories
+
+**Classification Results**
+![Classification Results](images/Classification_Results.png)
   
 **Error Analysis of XGBoost model (Classification)**
 ![XGB Error Analysis](images/XGB_Error_analysis.png) 
