@@ -1,51 +1,122 @@
 # Housing-Price-ML-and-DL-Analysis
 
-The project was developed as part of academic coursework for the course Machine And Deep Learning (MSc. in Business Administration and Data Science).
+The project was developed as part of academic coursework for the course *Machine And Deep Learning* (MSc. in Business Administration and Data Science).
 
-# **Project Background**
+The focus of the project is to understand how machine and deep learning models can be used to model complex relationships in real estate data, and what insights such models can provide for decision-making in practice.
 
-Due to rapid urbanization and rising demant in U.S., has led to housing price fluctuations. This highlights the need for accurate data-driven pricing and classification tools. Traditional valuation methods often fail to capture complex, non-linear relationships among property features, motivating the use of Machine Learning (ML) and Deep Learning (DL) techniques. This project leverages a large-scale rental dataset to develop and evaluate ML/DL models, providing actionable insights for real estate stakeholders.
+## Project Background
 
+Housing prices in the U.S. are influenced by multiple interacting factors such as location, property size, and market conditions. Traditional valuation approaches often struggle to capture these nonlinear relationships.
 
-Insights and recommendations are provided on the following key areas:
+This project approaches the problem from a data-driven perspective:
 
-- **Pricing Strategy**: Ensemble models like **Random Forest** and **XGBoost** can help property managers and landlords set competitive, data-driven rental prices, emphasizing in influential features like property size, number of bedrooms and bathrooms, and location.
+- How well can machine learning models predict rental prices?
+- Can properties be meaningfully grouped into price categories?
+- Which features drive price differences?
 
-- **Market Segmentation and Classification**: The classification model enables renters and platforms to identify fair market deals and categorize properties into **low**, **medium**, and **high** price tiers, supporting personalized recommendations and informed decision-making.
+## Dataset
 
-- **Feature Engineering and Data Utilization**: Effective preprocessing, dimensionality reduction, and creation of derived features, such as price per square foot or geographic clusters, significantly enhances model performance and interpretability.
+The dataset used in this project can be found <a href="https://www.kaggle.com/code/saurav9786/rent-price-recommender/input" style="text-decoration: underline;">**here**</a>
 
-The dataset utilized can be found: <a href="https://www.kaggle.com/code/saurav9786/rent-price-recommender/input" style="text-decoration: underline;">**here**</a>
+- Source: Kaggle  
+- Size: ~100,000 listings  
+- Final dataset after cleaning: 91,945 observations, 10 features  
+- Features include:
+  - Numerical: price, bedrooms, bathrooms, location  
+  - Categorical: city, state, amenities  
 
+Missing values and duplicates were handled, and the dataset was further transformed and engineered to improve model performance.
 
-# **Data Structure & Initial Checks**
+## Approach
 
-- The dataset used in this study comprises 99,492 apartment rental listings from the United States, each described by 22 variables covering numerical features (e.g., price, bedrooms, bathrooms, latitude, longitude) and categorical features (e.g., city, state, amenities, pets allowed). After removing duplicates and irrelevant columns, the final dataset consisted of 91,945 rows and 10 columns.
+The analysis follows a standard machine learning workflow:
 
-- Initial checks were conducted to assess data quality and structure. This included inspecting the data types of each feature, identifying **missing values**, detecting **duplicates**, and evaluating the **distribution** of categorical variables to understand **class imbalances**. Missing data were notably high in fields like pets allowed (≈55% missing) and amenities (≈15% missing), while numerical features such as bathrooms and bedrooms had minimal missing entries (<0.2%).
+- Data cleaning and preprocessing  
+- Exploratory data analysis  
+- Feature engineering and transformation  
+- Model training and evaluation  
 
-- Preliminary descriptive statistics, frequency counts, and visual inspections, through **histograms** and **boxplots** were performed to detect **outliers**, following subsequent filtering, transformation, and preprocessing steps. These checks ensured the dataset was clean, consistent, and ready for feature engineering and model development.
+Models used:
 
-## **Executive Summary**
-#### **Overview of Findings**
+- Linear Regression  
+- Decision Tree  
+- Random Forest  
+- Gradient Boosting  
+- XGBoost  
+- KNN  
+- Naive Bayes  
+- Neural Networks (MLP)
 
-The analysis identified key factors driving U.S. apartment rental prices and market segmentation. 
-- Square footage contributed approximately 22% to price predictions, reflecting the historical trend of larger apartments consistently commanding higher rents, with roughly $15 increase per additional 50 sq ft. Bedrooms and bathrooms together accounted for 18% of feature importance, aligning with past trends where larger units experienced faster rent growth due to family and shared-living demand.
-  
--  Geographic location explained 15% of price variance, highlighting historically higher rents in central and high-demand urban areas. The XGBoost classifier achieved 76.53% test accuracy and an F1 score of 0.7658 for categorizing listings into low, medium, and high price tiers, supporting fair deal identification and better listing visibility.
-  
--  Finally, feature engineering and dimensionality reduction preserved ~80% of variance while improving model interpretability (R² = 0.7953), overcoming past overfitting issues and providing reliable, actionable insights for real estate stakeholders.
+Model selection and optimization were based on cross-validation and performance metrics.
 
-Below are the final results of the top performed model both for regression and classificagtion:
+# Key Results
 
-**Regression Results**
-![Regression Results](images/Reression_Results.png)
-
+- Ensemble models like Random Forest and XGBoost achieved the strongest performance
 **Classification Results**
 ![Classification Results](images/Classification_Results.png)
-
+- XGBoost achieved **~76.5% classification accuracy** for price categories
+**Regression Results**
+![Regression Results](images/Reression_Results.png)
+- Random Forest explained **~80% of variance (R² ≈ 0.80)** in price prediction
 **Error Analysis of XGBoost model (Classification)**
-![XGB Error Analysis](images/XGB_Error_analysis.png)
+![XGB Error Analysis](images/XGB_Error_analysis.png) 
+- Neural Networks required more tuning but did not outperform tree-based models on this dataset
+
+Feature importance analysis showed that:
+
+- Property size  
+- Number of bedrooms and bathrooms  
+- Geographic location  
+
+were the most influential variables in both regression and classification tasks.
+
+## Practical Implications
+
+- Model choice affects both performance and interpretability in real applications  
+- Simpler models can perform well, but may fail to capture complex relationships  
+- Ensemble methods provide strong performance but require careful tuning  
+- Neural networks are powerful but depend heavily on data size and structure  
+- Data preprocessing and feature engineering are critical for reliable results  
+
+These findings reflect common trade-offs in applied machine learning projects.
+
+## Impact and Implications
+
+This type of modeling approach can support decision-making in the following contexts:
+
+- Assisting property managers in setting data-driven rental prices  
+- Supporting platforms in organizing and categorizing listings  
+- Helping users identify fair market segments  
+- Enabling analysis of housing market trends at scale  
+
+At the same time, several considerations are important:
+
+- Models depend heavily on the quality and completeness of data  
+- Predictions should be interpreted as support tools, not absolute truths  
+- External factors such as economic conditions are not fully captured  
+
+Overall, this project demonstrates how machine learning can support structured decision-making, while also highlighting the need for careful interpretation and validation in real-world use.
+
+## Project structure
+
+```
+nlp-mental-health-classification/
+│
+├── images
+├── README.md
+└── us_rental_ml_dl.ipynb
+└── us_rental_ml_dl_report.pdf
+```
+
+## Notes
+
+The goal of this exam project was to:
+- understand the behavior of different models  
+- evaluate their strengths and limitations  
+- and connect technical results with practical implications  
+
+The full analysis, methodology, and detailed results are documented in: `us_rental_ml_dl_report.pdf`
+
 
 #### **Recommendations**
 
